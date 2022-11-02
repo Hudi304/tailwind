@@ -1,0 +1,107 @@
+@mixin avatarSize ($size) {
+    height: $size;
+    width: $size;
+
+    & .status {
+      height: calc($size / 5.33);
+      width: calc($size / 5.33);
+    }
+
+    & div:first-child svg {
+      height: calc($size / 2);
+      width: calc($size / 2);
+    }
+}
+
+.avatar {
+  // default style
+  height: 40px;
+  width: 40px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: content-box;
+  color: var(--u-i---white);
+
+  & *:first-child {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    background: #F3F4F6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  // initials and icon background
+  &.initials *:first-child,
+  &.icon *:first-child {
+    background: var(--cascada--colors---cascada--secondary);
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  // icon size
+  &.icon div:first-child svg {
+    border-radius: 0%;
+  }
+
+  // sizes
+  &.xs {
+    @include avatarSize(26px);
+    &.initials *:first-child {
+      font-size: 10px;
+    }
+  }
+  &.small {
+    @include avatarSize(32px);
+    &.initials *:first-child {
+      font-size: 12px;
+    }
+  }
+  &.medium {
+    @include avatarSize(40px);
+    &.initials *:first-child {
+      font-size: 14px;
+    }
+  }
+  &.large {
+    @include avatarSize(48px);
+    &.initials *:first-child {
+      font-size: 16px;
+    }
+  }
+  &.xl {
+    @include avatarSize(56px);
+    &.initials *:first-child {
+      font-size: 18px;
+    }
+  }
+
+  // status
+  & .status {
+    position: absolute;
+    left: 81.25%;
+    right: 0%;
+    top: 81.25%;
+    bottom: 0%;
+
+    background: var(--u-i---stroke-2);
+    box-shadow: 0px 0px 0px 2px #FFFFFF;
+    border-radius: 50%;
+  }
+
+  &.online .status {
+    background: var(--cascada--colors---green--accent);
+  }
+  &.busy .status {
+    background: var(--u-i---alert---default);
+  }
+  &.offline .status {
+    background: var(--u-i---stroke-2);
+  }
+}

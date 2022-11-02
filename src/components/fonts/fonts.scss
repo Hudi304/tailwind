@@ -1,0 +1,154 @@
+/* Cascada Type/Hero */
+@mixin fontTypeHero {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 96px;
+  line-height: 96px;
+}
+
+/* Cascada Type/Headline 1 */
+@mixin fontTypeHeadline1 {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 64px;
+}
+
+/* Cascada Type/Headline 2 */
+@mixin fontTypeHeadline2 {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+/* Cascada Type/Headline 3 */
+@mixin fontTypeHeadline3 {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+/* Cascada Type/Headline 4 */
+@mixin fontTypeHeadline4 {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 40px;
+}
+
+/* Cascada Type/Body Large Regular */
+@mixin fontTypeBodyLargeRegular {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+/* Cascada Type/Body Large Bold */
+@mixin fontTypeBodyLargeBold {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+/* Cascada Type/Body Small Regular */
+@mixin fontTypeBodySmallRegular {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Cascada Type/Body Small Bold */
+@mixin fontTypeBodySmallBold {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Cascada Type/Caption Large Regular */
+@mixin fontTypeCaptionLargeRegular {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+/* Cascada Type/Caption Large Bold */
+@mixin fontTypeCaptionLargeBold {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+/* Cascada Type/Caption Small Regular */
+@mixin fontTypeCaptionSmallRegular {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+/* Cascada Type/Caption Small Bold */
+@mixin fontTypeCaptionSmallBold {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+/* Cascada Type/Hairline Large */
+@mixin fontTypeHairlineLarge {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+/* Cascada Type/Hairline Small */
+@mixin fontTypeHairlineSmall {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+
+/* Cascada Type/Button Default */
+@mixin fontTypeButtonDefault {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+/* Cascada Type/Button Small */
+@mixin fontTypeButtonSmall {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+}

@@ -1,0 +1,121 @@
+@import "../fonts/fonts.scss";
+
+@mixin buttonSizedPadding($color) {
+  & .btn-content {
+    padding: 0 4px;
+    @include fontTypeButtonSmall();
+
+    & svg {
+      height: 10px;
+      & path {
+        fill: $color;
+      }
+    }
+  }
+
+  &.default {
+    padding: 12px;
+  }
+
+  &.large {
+    padding: 16px;
+
+    & .btn-content {
+      @include fontTypeButtonDefault();
+      padding: 0 8px;
+
+      & svg {
+        margin: 0 2px;
+        & path {
+          fill: $color;
+        }
+      }
+    }
+  }
+
+  &.small {
+    padding: 8px;
+  }
+}
+
+.button {
+  border-radius: 90px;
+
+  @apply  inline-flex
+          justify-center
+          items-center
+          text-center
+          text-sm
+          select-none
+          transition-all
+          duration-200;
+
+  &.primary {
+    $color: var(--u-i---white);
+
+    color: $color;
+    background-color: var(--cascada--colors---green--accent);
+
+    @apply  transition-all
+            text-white
+            font-semibold
+            text-sm;
+
+    &.disabled {
+      background-color: var(--cascada--colors---cascada--secondary);
+    }
+
+    &:hover, &:active {
+      background-color: var(--cascada--colors---green--accent--dark);
+    }
+
+    @include buttonSizedPadding($color);
+  }
+
+  &.secondary {
+    $color: var(--cascada--colors---cascada--primary);
+
+    color: $color;
+    background-color: var(--cascada--colors---light--green);
+
+    @apply  font-semibold
+            text-sm;
+
+    &:hover, &:active {
+      background-color: var(--u-i---stroke);
+    }
+
+    @include buttonSizedPadding($color);
+  }
+
+  &.loading {
+    @apply pointer-events-none cursor-not-allowed;
+  }
+
+  &.submit {
+    @apply min-w-24;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+
+    @apply  pointer-events-none
+            cursor-not-allowed;
+  }
+
+  &.icon-btn {
+    @apply bg-transparent text-gray-500 hover:bg-gray-50 active:bg-gray-100 focus:bg-transparent px-2 rounded-full;
+
+    &.disabled {
+      @apply text-gray-300;
+    }
+  }
+
+  .btn-content {
+    @apply  flex gap-3 items-center;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}

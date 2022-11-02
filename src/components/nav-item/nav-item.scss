@@ -1,0 +1,15 @@
+@import "../fonts/fonts.scss";
+
+.link {
+  display: inline-block;
+  height: 44px;
+  padding-top: 14px;
+
+  color: var(--cascada--colors---cascada--primary);
+  @include fontTypeButtonSmall();
+
+  &.active {
+    color: var(--cascada--colors---green--accent);
+    border-bottom: 2px solid var(--cascada--colors---green--accent);
+  }
+}

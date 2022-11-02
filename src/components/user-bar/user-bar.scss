@@ -1,0 +1,30 @@
+.user_bar {
+  display: flex;
+  flex-direction: column;
+  gap: 5;
+
+  & .account {
+    border-left: 15px solid gray;
+  
+    &.active {
+      border-left: 15px solid green;
+    }
+
+    & .name {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    & .key_accounts {
+      & .address {
+
+        // &.active {
+        //   color: green;
+        //   border-bottom: 5px solid green;
+        // }
+      }
+    }
+  }
+
+}
+
