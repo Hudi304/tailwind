@@ -1,10 +1,14 @@
 .home-container {
   @apply grid w-full h-full bg-gray-700;
-  grid-template-rows: calc(100vh - 100px) 100px;
 
-  .content-container{
+  .page-container{
+    @apply grid;
+    grid-template-rows: calc(100vh - 100px) 100px;
 
-    @apply flex items-center justify-center;
+    .content-container{
+      @apply flex flex-col h-full w-full items-center justify-center;
+      height: calc(100vh - 100px);
+    } 
     
   }
 }
