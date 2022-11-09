@@ -1,7 +1,7 @@
 import React, { Fragment, ReactNode, useEffect, useState, createContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { Button } from "@/components/button/Button";
-import { Icon, ICONS } from "@/components/icon/Icon";
+import { Button } from '@/components/button/button';
+import { Icon, ICONS } from '@/components/icon/icon';
 
 const ModalContext = createContext({
   unSetModal: () => { },

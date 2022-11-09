@@ -1,8 +1,8 @@
 import React from "react"
 import Select from 'react-select'
-import ExpandMore from "../expand-more/Expand-more"
+import ExpandMore from "../expand-more/expand-more"
 
-import "./Input-field.scss"
+import "./input-field.scss"
 
 type Props = {
   onChange?: any

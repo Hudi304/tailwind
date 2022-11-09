@@ -1,5 +1,5 @@
 import { FC } from "react"
-import "./Loader.scss"
+import "./loader.scss"
 
 type Props = {
   className?: string

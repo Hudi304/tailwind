@@ -1,19 +1,11 @@
-import { Loader } from "@/components/loader/Loader"
+import { Loader } from "@/components/loader/loader"
 import React from "react"
 
-import "./Button.scss"
+import "./button.scss"
 
-export type ButtonVariant =
-  | "primary"
-  | "secondary"
-  | "icon-btn"
-  | undefined  
+export type ButtonVariant = "primary" | "secondary" | "icon-btn" | undefined
 
-export type ButtonSize =
-  | "small"
-  | "default"
-  | "large"
-  | undefined
+export type ButtonSize = "small" | "default" | "large" | undefined
 
 type Props = {
   children?: React.ReactNode
@@ -41,14 +33,15 @@ export const Button = React.memo(
     iconRight = null,
     disabled = false,
     loading = false,
-    style = {},    
+    style = {},
     ...rest
   }: Props) => (
     <button
       type={type}
       style={style}
-      className={`button${disabled ? " disabled" : ""}${type === "submit" ? " submit" : ""
-        }${loading ? " loading" : ""} ${variant} ${size} ${className}`}
+      className={`button${disabled ? " disabled" : ""}${type === "submit" ? " submit" : ""}${
+        loading ? " loading" : ""
+      } ${variant} ${size} ${className}`}
       disabled={disabled || loading}
       onClick={(e) => {
         e.stopPropagation()
@@ -62,7 +55,9 @@ export const Button = React.memo(
         {iconRight}
       </span>
       {loading && (
-        <span className="absolute"><Loader size={7} /></span>
+        <span className="absolute">
+          <Loader size={7} />
+        </span>
       )}
     </button>
   ),

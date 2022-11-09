@@ -1,7 +1,7 @@
 import React from "react"
-import { NavItem } from "../nav-item/Nav-item"
+import { NavItem } from "../nav-item/nav-item"
 
-import "./Nav-stack.scss"
+import "./nav-stack.scss"
 
 export type NavLink = {
   label: string,

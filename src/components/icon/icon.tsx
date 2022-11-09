@@ -1,5 +1,5 @@
 import { FC, memo } from "react"
-import "./Icon.scss"
+import "./icon.scss"
 import {
   ExclamationIcon,
   SaveIcon,

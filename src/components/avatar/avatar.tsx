@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import "./Avatar.scss"
+import "./avatar.scss"
 
 export enum AvatarType {
   photo = "photo",
@@ -12,7 +12,7 @@ export enum AvatarType {
 type Props = {
   className?: string
   style?: any
-  size?: "xs" | "small" | "medium" | "large" |"xl"
+  size?: "xs" | "small" | "medium" | "large" | "xl"
   type?: AvatarType
   src?: string
   initials?: string
@@ -22,29 +22,28 @@ type Props = {
 }
 
 export const Avatar = ({
-  className = '',
+  className = "",
   style = {},
-  size = 'medium',
+  size = "medium",
   type = AvatarType.placeholder,
-  src = '',
-  initials = '',
+  src = "",
+  initials = "",
   icon = null,
   showStatus = false,
-  status = 'offline',
+  status = "offline",
 }: Props) => {
   const [state, setState] = useState<AvatarType>(type)
 
   return (
-    <div
-      className={`avatar ${type} ${size} ${status} ${className}`}
-      style={style}
-    >
-      {{
-        [AvatarType.photo]: (<img src={src} />),
-        [AvatarType.placeholder]: (<img src="./icons/default_avatar.png" />),
-        [AvatarType.initials]: (<div>{initials}</div>),
-        [AvatarType.icon]: (<div>{icon}</div>),
-      }[state]}
+    <div className={`avatar ${type} ${size} ${status} ${className}`} style={style}>
+      {
+        {
+          [AvatarType.photo]: <img src={src} />,
+          [AvatarType.placeholder]: <img src="./icons/default_avatar.png" />,
+          [AvatarType.initials]: <div>{initials}</div>,
+          [AvatarType.icon]: <div>{icon}</div>,
+        }[state]
+      }
       {showStatus && <div className="status" />}
     </div>
   )

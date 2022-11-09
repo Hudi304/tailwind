@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-import "./Nav-item.scss"
+import "./nav-item.scss"
 
 type Props = {
   className?: string

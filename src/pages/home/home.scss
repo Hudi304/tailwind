@@ -1,0 +1,10 @@
+.home-container {
+  @apply grid w-full h-full bg-gray-700;
+  grid-template-rows: calc(100vh - 100px) 100px;
+
+  .content-container{
+
+    @apply flex items-center justify-center;
+    
+  }
+}
