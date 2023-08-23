@@ -13,7 +13,7 @@ import { Flex2 } from "./7_flex_2"
 import { Gird } from "./8_grid"
 import { Buttons } from "./9_buttons"
 import { End } from "./end"
-import { Animations } from "./11_animations"
+import { Animations } from "../11_animations"
 import { usePresentationStore } from "@/store/page-store"
 
 export enum PAGES {

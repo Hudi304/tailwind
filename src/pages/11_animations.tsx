@@ -1,6 +1,6 @@
 import { Card } from "@/components/card/card"
 import { ButtonBar } from "@/widgets/buttonBar"
-import { PageProps, PAGES } from "./home"
+import { PageProps, PAGES } from "./home/home"
 
 export const Animations = ({}: PageProps) => {
   return (
