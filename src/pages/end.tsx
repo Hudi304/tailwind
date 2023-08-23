@@ -6,14 +6,9 @@ import gif from "../assets/end.gif"
 
 export const End = ({}: PageProps) => {
   return (
-    <div className="page-container">
-      <div className="content-container">
-        <Card className="bg-gray-800 items-center">
-          <h1 className="text-8xl text-white font-bold ">That's all Folks!</h1>
-          <img src={gif} className="w-96 h-96" alt="dadas" />
-        </Card>
-      </div>
-      <ButtonBar />
-    </div>
+    <Card className="bg-gray-800 items-center mt-[100px]">
+      <h1 className="text-8xl text-white font-bold ">That's all Folks!</h1>
+      <img src={gif} className="w-96 h-96" alt="dadas" />
+    </Card>
   )
 }

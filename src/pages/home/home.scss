@@ -1,102 +1,94 @@
-.page-container {
-  @apply grid;
-  grid-template-rows: calc(100vh - 100px) 100px;
+::-webkit-scrollbar {
+  width: 6px;
+}
 
-  .content-container {
-    @apply flex flex-col h-full w-full items-center justify-center;
-    height: calc(100vh - 100px);
+::-webkit-scrollbar-thumb {
+  background: #adadad;
+  border-radius: 6px;
+}
 
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
+::-webkit-scrollbar-thumb:hover {
+  background: #777779;
+  border-radius: 6px;
+}
 
-    ::-webkit-scrollbar-thumb {
-      background: #adadad;
-      border-radius: 6px;
-    }
+.stripes {
+  background-color: #60a5fa1a;
+  background-image: linear-gradient(
+    135deg,
+    #3b82f680 10%,
+    transparent 0,
+    transparent 50%,
+    #3b82f680 0,
+    #3b82f680 60%,
+    transparent 0,
+    transparent
+  );
+  background-size: 7.07px 7.07px;
+}
 
-    ::-webkit-scrollbar-thumb:hover {
-      background: #777779;
-      border-radius: 6px;
-    }
+.stripes-pink {
+  background-color: #f472b61a;
+  background-image: linear-gradient(
+    135deg,
+    #ec489980 10%,
+    transparent 0,
+    transparent 50%,
+    #ec489980 0,
+    #ec489980 60%,
+    transparent 0,
+    transparent
+  );
+  background-size: 7.07px 7.07px;
+}
 
-    .stripes {
-      background-color: #60a5fa1a;
-      background-image: linear-gradient(
-        135deg,
-        #3b82f680 10%,
-        transparent 0,
-        transparent 50%,
-        #3b82f680 0,
-        #3b82f680 60%,
-        transparent 0,
-        transparent
-      );
-      background-size: 7.07px 7.07px;
-    }
+.flex1-bg {
+  @apply w-full h-96 rounded mt-6;
+}
 
-    .stripes-pink {
-      background-color: #f472b61a;
-      background-image: linear-gradient(
-        135deg,
-        #ec489980 10%,
-        transparent 0,
-        transparent 50%,
-        #ec489980 0,
-        #ec489980 60%,
-        transparent 0,
-        transparent
-      );
-      background-size: 7.07px 7.07px;
-    }
+.flex-item {
+  @apply h-10 flex items-center justify-center relative rounded-md font-bold text-white;
+}
 
-    .flex1-bg {
-      @apply w-full h-96 rounded mt-6;
-    }
+.grid-card {
+  @apply w-1/2 h-1/2;
+  max-width: 600px;
+  max-height: 600px;
+}
 
-    .flex-item {
-      @apply h-10 flex items-center justify-center relative rounded-md font-bold text-white;
-    }
+.grid-space {
+  @apply w-full h-full rounded-md mt-10;
+}
 
-    .grid-card {
-      @apply w-1/2 h-1/2;
-      max-width: 600px;
-      max-height: 600px;
-    }
+.grid-item {
+  @apply flex items-center justify-center relative rounded-md font-bold text-white;
+}
 
-    .grid-space {
-      @apply w-full h-full rounded-md mt-10;
-    }
+.responsive-gird-styles {
+  background-color: #60a5fa1a;
+  background-image: linear-gradient(
+    135deg,
+    #3b82f680 10%,
+    transparent 0,
+    transparent 50%,
+    #3b82f680 0,
+    #3b82f680 60%,
+    transparent 0,
+    transparent
+  );
+  background-size: 7.07px 7.07px;
 
-    .grid-item {
-      @apply flex items-center justify-center relative rounded-md font-bold text-white;
-    }
+  max-height: 800px;
 
-    .responsive-gird-styles {
-      background-color: #60a5fa1a;
-      background-image: linear-gradient(
-        135deg,
-        #3b82f680 10%,
-        transparent 0,
-        transparent 50%,
-        #3b82f680 0,
-        #3b82f680 60%,
-        transparent 0,
-        transparent
-      );
-      background-size: 7.07px 7.07px;
+  @apply rounded-md gap-5 mt-10 p-5 grid overflow-x-hidden overflow-y-scroll;
+}
 
-      max-height: 800px;
-
-      @apply rounded-md gap-5 mt-10 p-5 grid overflow-x-hidden overflow-y-scroll;
-    }
-
-    .grid-lg {
-      @apply lg:grid-cols-4
-          md:grid-cols-3
-          sm:grid-cols-2;
-    }
-  }
+.grid-lg {
+  @apply 
+  2xl:grid-cols-4
+  xl:grid-cols-3
+  lg:grid-cols-2
+  md:grid-cols-1;
 }
 
 .background_animation {

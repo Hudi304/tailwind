@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 import "./home.scss"
 
@@ -16,22 +16,45 @@ import { Animations } from "../11_animations"
 import { Responsive } from "../10_responsive"
 
 import { End } from "../end"
+import { TailwindConfig } from "../03_tailwind_config"
 
-export type PageProps = {
-  // setPage: (page: PAGES) => void
-}
+export type PageProps = {}
 
 export const Home = () => {
-  const [_, setPage] = useState<PAGES>(PAGES.START)
+  const { page, next_page, prev_page } = usePresentationStore()
 
-  const { page } = usePresentationStore()
+  const handleKeyPress = useCallback((event: KeyboardEvent) => {
+    if (event.key === "ArrowLeft" || event.key === "a") {
+      prev_page()
+    }
+
+    if (event.key === "ArrowRight" || event.key === "d") {
+      next_page()
+    }
+  }, [])
+
+  useEffect(() => {
+    // attach the event listener
+    document.addEventListener("keydown", handleKeyPress)
+    // remove the event listener
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress)
+    }
+  }, [handleKeyPress])
+
   return (
-    <div className="grid w-full h-full bg-sky-950 background_animation">
+    <div className="flex justify-between w-full h-full background_animation">
+      <div
+        className="h-full w-[200px] hover:opacity-10 bg-gray-700 hover:shadow-2xl opacity-0 transition-all duration-200 mr-5"
+        onClick={() => prev_page()}
+      />
       {
         {
           [PAGES.START]: <Start />,
           [PAGES.WHY]: <Why />,
           [PAGES.HOW]: <How />,
+          [PAGES.CONFIG]: <TailwindConfig />,
+
           [PAGES.DEAD_CODE]: <DeadCode />,
 
           [PAGES.WHERE]: <Where />,
@@ -45,6 +68,10 @@ export const Home = () => {
           [PAGES.END]: <End />,
         }[page]
       }
+      <div
+        className="h-full w-[200px] hover:opacity-10 bg-gray-700 hover:shadow-md opacity-0 transition-all duration-200 ml-5"
+        onClick={next_page}
+      ></div>
     </div>
   )
 }
