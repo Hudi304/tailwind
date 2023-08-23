@@ -26,7 +26,7 @@ export const Home = () => {
 
   const { page } = usePresentationStore()
   return (
-    <div className="home-container">
+    <div className="grid w-full h-full bg-sky-950 background_animation">
       {
         {
           [PAGES.START]: <Start />,
