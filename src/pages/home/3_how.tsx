@@ -2,7 +2,7 @@ import { Card } from "@/components/card/card"
 import { ButtonBar } from "@/widgets/buttonBar"
 import { PAGES, PageProps } from "./home"
 
-export const How = ({ setPage }: PageProps) => {
+export const How = ({  }: PageProps) => {
   return (
     <div className="page-container">
       <div className="content-container">
@@ -17,14 +17,7 @@ export const How = ({ setPage }: PageProps) => {
           </div>
         </Card>
       </div>
-      <ButtonBar
-        nextPage={() => {
-          setPage(PAGES.DEAD_CODE)
-        }}
-        prevPage={() => {
-          setPage(PAGES.WHY)
-        }}
-      />
+      <ButtonBar />
     </div>
   )
 }

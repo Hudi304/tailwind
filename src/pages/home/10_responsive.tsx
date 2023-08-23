@@ -2,7 +2,7 @@ import { Card } from "@/components/card/card"
 import { ButtonBar } from "@/widgets/buttonBar"
 import { PageProps, PAGES } from "./home"
 
-export const Responsive = ({ setPage }: PageProps) => {
+export const Responsive = ({  }: PageProps) => {
   function getGridItems() {
     const indexes = [...Array(16).keys()]
     return (
@@ -22,14 +22,7 @@ export const Responsive = ({ setPage }: PageProps) => {
           <div className="grid-lg responsive-gird-styles">{getGridItems()}</div>
         </Card>
       </div>
-      <ButtonBar
-        nextPage={() => {
-          setPage(PAGES.ANIMATION)
-        }}
-        prevPage={() => {
-          setPage(PAGES.BUTTON)
-        }}
-      />
+      <ButtonBar />
     </div>
   )
 }

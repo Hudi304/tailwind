@@ -2,7 +2,7 @@ import { Card } from "@/components/card/card"
 import { ButtonBar } from "@/widgets/buttonBar"
 import { PageProps, PAGES } from "./home"
 
-export const Flex2 = ({ setPage }: PageProps) => {
+export const Flex2 = ({  }: PageProps) => {
   return (
     <div className="page-container">
       <div className="content-container">
@@ -17,14 +17,7 @@ export const Flex2 = ({ setPage }: PageProps) => {
           </div>
         </Card>
       </div>
-      <ButtonBar
-        nextPage={() => {
-          setPage(PAGES.GRID)
-        }}
-        prevPage={() => {
-          setPage(PAGES.FLEX)
-        }}
-      />
+      <ButtonBar />
     </div>
   )
 }

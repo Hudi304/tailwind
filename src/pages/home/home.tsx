@@ -1,7 +1,4 @@
-import { Card } from "@/components/card/card"
 import { useState } from "react"
-import Button from "../../widgets/button/button"
-import { ButtonBar } from "../../widgets/buttonBar"
 
 import "./home.scss"
 
@@ -16,6 +13,8 @@ import { Flex2 } from "./7_flex_2"
 import { Gird } from "./8_grid"
 import { Buttons } from "./9_buttons"
 import { End } from "./end"
+import { Animations } from "./11_animations"
+import { usePresentationStore } from "@/store/page-store"
 
 export enum PAGES {
   START = "START",
@@ -34,29 +33,31 @@ export enum PAGES {
 }
 
 export type PageProps = {
-  setPage: (page: PAGES) => void
+  // setPage: (page: PAGES) => void
 }
 
 export const Home = () => {
-  const [page, setPage] = useState<PAGES>(PAGES.START)
+  const [_, setPage] = useState<PAGES>(PAGES.START)
+
+  const { page } = usePresentationStore()
   return (
     <div className="home-container">
       {
         {
-          [PAGES.START]: <Start setPage={setPage}></Start>,
-          [PAGES.WHY]: <Why setPage={setPage}></Why>,
-          [PAGES.HOW]: <How setPage={setPage}></How>,
-          [PAGES.DEAD_CODE]: <DeadCode setPage={setPage}></DeadCode>,
+          [PAGES.START]: <Start />,
+          [PAGES.WHY]: <Why />,
+          [PAGES.HOW]: <How />,
+          [PAGES.DEAD_CODE]: <DeadCode />,
 
-          [PAGES.WHERE]: <Where setPage={setPage}></Where>,
-          [PAGES.FLEX]: <Flex1 setPage={setPage}></Flex1>,
-          [PAGES.FLEX2]: <Flex2 setPage={setPage}></Flex2>,
-          [PAGES.GRID]: <Gird setPage={setPage}></Gird>,
+          [PAGES.WHERE]: <Where />,
+          [PAGES.FLEX]: <Flex1 />,
+          [PAGES.FLEX2]: <Flex2 />,
+          [PAGES.GRID]: <Gird />,
 
-          [PAGES.BUTTON]: <Buttons setPage={setPage}></Buttons>,
-          [PAGES.RESPONSIVE]: <Responsive setPage={setPage}></Responsive>,
-          [PAGES.ANIMATION]: <Animation setPage={setPage}></Animation>,
-          [PAGES.END]: <End setPage={setPage}></End>,
+          [PAGES.BUTTON]: <Buttons />,
+          [PAGES.RESPONSIVE]: <Responsive />,
+          [PAGES.ANIMATION]: <Animations />,
+          [PAGES.END]: <End />,
         }[page]
       }
     </div>

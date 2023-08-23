@@ -1,16 +1,66 @@
 import { PAGES } from "@/pages/home/home"
 import { create } from "zustand"
 
-export type UserState = {
+export type PresentationState = {
   next_page: () => void
   prev_page: () => void
-  current_page: PAGES
+  page: PAGES
+  enum_index: number
 }
 
-export const useUserStore = create<UserState>()((set, get) => {
+// prettier-ignore
+const { 
+  START,
+  WHY,
+  HOW,
+  DEAD_CODE,
+  WHERE,
+  FLEX,
+  FLEX2,
+  GRID,
+  BUTTON,
+  RESPONSIVE,
+  ANIMATION,
+  END
+} = PAGES
+
+// prettier-ignore
+const state_arr = [  
+  START,
+  WHY,
+  HOW,
+  DEAD_CODE,
+  WHERE,
+  FLEX,
+  FLEX2,
+  GRID,
+  BUTTON,
+  RESPONSIVE,
+  ANIMATION,
+  END
+]
+
+export const usePresentationStore = create<PresentationState>()((set, get) => {
   return {
-    current_page: PAGES.START,
-    next_page: () => {},
-    prev_page: () => {},
+    enum_index: 0,
+    page: PAGES.START,
+    next_page: () => {
+      const state = get()
+      const next_index = state.enum_index + 1
+
+      if (next_index < state_arr.length) {
+        set({ enum_index: next_index })
+        set({ page: state_arr[next_index] })
+      }
+    },
+    prev_page: () => {
+      const state = get()
+      const next_index = state.enum_index - 1
+
+      if (next_index > 0) {
+        set({ enum_index: next_index })
+        set({ page: state_arr[next_index] })
+      }
+    },
   }
 })
