@@ -1,33 +1,35 @@
-import React, { Fragment, ReactNode, useEffect, useState, createContext } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { Button } from '@/components/button/button';
-import { Icon, ICONS } from '@/components/icon/icon';
+import React, { Fragment, ReactNode, useEffect, useState, createContext } from "react"
+import { Dialog, Transition } from "@headlessui/react"
+import { Button } from "@/components/button/button"
+import { Icon, ICONS } from "@/components/icon/icon"
 
 const ModalContext = createContext({
-  unSetModal: () => { },
-  setModal: (modal: any) => { console.log(modal) }
-});
+  unSetModal: () => {},
+  setModal: (modal: any) => {
+    console.log(modal)
+  },
+})
 
 type ModalProps = {
-  modal: ReactNode;
-  unSetModal: () => void;
-};
+  modal: ReactNode
+  unSetModal: () => void
+}
 
 const Modal = ({ modal, unSetModal }: ModalProps) => {
   useEffect(() => {
     const bind = (e: any) => {
       if (e.keyCode !== 27) {
-        return;
+        return
       }
       if (document.activeElement && ["INPUT", "SELECT"].includes(document.activeElement.tagName)) {
-        return;
+        return
       }
-      unSetModal();
-    };
+      unSetModal()
+    }
 
-    document.addEventListener("keyup", bind);
-    return () => document.removeEventListener("keyup", bind);
-  }, [modal, unSetModal]);
+    document.addEventListener("keyup", bind)
+    return () => document.removeEventListener("keyup", bind)
+  }, [modal, unSetModal])
 
   return (
     <Transition.Root show={true} as={Fragment}>
@@ -60,7 +62,7 @@ const Modal = ({ modal, unSetModal }: ModalProps) => {
           >
             <div className="relative inline-block align-bottom bg-white p-6 rounded-lg text-left shadow-xl transform transition-all sm:my-8 sm:align-middle">
               <Button className="absolute top-1 right-1" variant="icon-btn" onClick={unSetModal}>
-                <Icon icon={ICONS.CANCEL} />
+                {/* <Icon icon={ICONS.CANCEL} /> */}
               </Button>
               <div className="mt-4 overflow-hidden">{modal}</div>
             </div>
@@ -68,17 +70,17 @@ const Modal = ({ modal, unSetModal }: ModalProps) => {
         </div>
       </Dialog>
     </Transition.Root>
-  );
-};
+  )
+}
 
 const ModalProvider = (props: any) => {
-  const [modals, setModals] = useState([] as any[]);
+  const [modals, setModals] = useState([] as any[])
   const setModal = (modal: any) => {
-    setModals([...modals, modal]);
-  };
+    setModals([...modals, modal])
+  }
   const unSetModal = () => {
-    setModals([...modals.slice(0, modals.length - 1)]);
-  };
+    setModals([...modals.slice(0, modals.length - 1)])
+  }
 
   return (
     <ModalContext.Provider value={{ unSetModal, setModal }} {...props}>
@@ -87,12 +89,12 @@ const ModalProvider = (props: any) => {
         <Modal key={index} modal={modal} unSetModal={unSetModal} />
       ))}
     </ModalContext.Provider>
-  );
-};
+  )
+}
 
 const useModal = () => {
-  const context = React.useContext(ModalContext);
-  return context;
-};
+  const context = React.useContext(ModalContext)
+  return context
+}
 
-export { ModalProvider, useModal };
+export { ModalProvider, useModal }

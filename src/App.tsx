@@ -1,18 +1,15 @@
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import { Routes, Route, Navigate } from "react-router-dom"
 
 import "./App.scss"
 import { Home } from "./pages/home/home"
-import { useTheme } from "./components/theme/themeProvider"
 import { storeDeviceData } from "./common/device-data"
 
-function App() {
-  const { theme } = useTheme()
-
+export function App() {
   useEffect(storeDeviceData, [])
 
   return (
-    <div className="App" style={{ ...theme } as React.CSSProperties}>
+    <div className="App">
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="*" element={<Navigate replace to="/home" />} />
@@ -20,5 +17,3 @@ function App() {
     </div>
   )
 }
-
-export default App
