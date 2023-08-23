@@ -24,22 +24,21 @@ export enum PAGES {
 }
 // prettier-ignore
 
+const state_arr = [  
+  PAGES.START,
+  PAGES.WHY,
+  PAGES.HOW,
+  PAGES.DEAD_CODE,
+  PAGES.WHERE,
+  PAGES.FLEX,
+  PAGES.FLEX2,
+  PAGES.GRID,
+  PAGES.BUTTON,
+  PAGES.RESPONSIVE,
+  PAGES.ANIMATION,
+  PAGES.END
+]
 export const usePresentationStore = create<PresentationState>()((set, get) => {
-  const state_arr = [  
-    PAGES.START,
-    PAGES.WHY,
-    PAGES.HOW,
-    PAGES.DEAD_CODE,
-    PAGES.WHERE,
-    PAGES.FLEX,
-    PAGES.FLEX2,
-    PAGES.GRID,
-    PAGES.BUTTON,
-    PAGES.RESPONSIVE,
-    PAGES.ANIMATION,
-    PAGES.END
-  ]
-
   return {
     enum_index: 0,
     page: PAGES.START,

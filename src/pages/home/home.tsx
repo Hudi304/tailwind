@@ -3,7 +3,7 @@ import { useState } from "react"
 import "./home.scss"
 
 import { PAGES, usePresentationStore } from "@/store/page-store"
-import { Start } from "../01_title_page"
+import { Start } from "../01_start"
 import { Why } from "../02_why"
 import { How } from "../03_how"
 import { DeadCode } from "../04_dead_code"

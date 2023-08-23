@@ -1,5 +1,9 @@
 $user_bar_width: 150px;
 
+.debug {
+  @apply border border-black;
+}
+
 .App {
   display: flex;
   height: 100vh;
@@ -8,7 +12,7 @@ $user_bar_width: 150px;
     height: 100vh;
     width: $user_bar_width;
     overflow-y: scroll;
-    
+
     // background: red;
   }
 
@@ -57,4 +61,3 @@ $user_bar_width: 150px;
     transform: rotate(360deg);
   }
 }
-
