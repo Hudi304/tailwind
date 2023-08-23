@@ -1,4 +1,3 @@
-import { PAGES } from "@/pages/home/home"
 import { create } from "zustand"
 
 export type PresentationState = {
@@ -8,39 +7,39 @@ export type PresentationState = {
   enum_index: number
 }
 
-// prettier-ignore
-const { 
-  START,
-  WHY,
-  HOW,
-  DEAD_CODE,
-  WHERE,
-  FLEX,
-  FLEX2,
-  GRID,
-  BUTTON,
-  RESPONSIVE,
-  ANIMATION,
-  END
-} = PAGES
+export enum PAGES {
+  START = "START",
+  WHY = "WHY",
+  HOW = "HOW",
+  DEAD_CODE = "DEAD_CODE",
+  WHERE = "WHERE",
+  FLEX = "FLEX",
+  FLEX2 = "FLEX2",
+  GRID = "GRID",
 
+  BUTTON = "BUTTON",
+  RESPONSIVE = "RESPONSIVE",
+  ANIMATION = "ANIMATION",
+  END = "END",
+}
 // prettier-ignore
-const state_arr = [  
-  START,
-  WHY,
-  HOW,
-  DEAD_CODE,
-  WHERE,
-  FLEX,
-  FLEX2,
-  GRID,
-  BUTTON,
-  RESPONSIVE,
-  ANIMATION,
-  END
-]
 
 export const usePresentationStore = create<PresentationState>()((set, get) => {
+  const state_arr = [  
+    PAGES.START,
+    PAGES.WHY,
+    PAGES.HOW,
+    PAGES.DEAD_CODE,
+    PAGES.WHERE,
+    PAGES.FLEX,
+    PAGES.FLEX2,
+    PAGES.GRID,
+    PAGES.BUTTON,
+    PAGES.RESPONSIVE,
+    PAGES.ANIMATION,
+    PAGES.END
+  ]
+
   return {
     enum_index: 0,
     page: PAGES.START,
@@ -57,7 +56,7 @@ export const usePresentationStore = create<PresentationState>()((set, get) => {
       const state = get()
       const next_index = state.enum_index - 1
 
-      if (next_index > 0) {
+      if (next_index >= 0) {
         set({ enum_index: next_index })
         set({ page: state_arr[next_index] })
       }

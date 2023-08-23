@@ -1,9 +1,9 @@
 import { Card } from "@/components/card/card"
 import Button from "@/widgets/button/button"
 import { ButtonBar } from "@/widgets/buttonBar"
-import { PageProps, PAGES } from "./home"
+import { PageProps } from "./home/home"
 
-export const Buttons = ({  }: PageProps) => {
+export const Buttons = ({}: PageProps) => {
   return (
     <div className="page-container">
       <div className="content-container">

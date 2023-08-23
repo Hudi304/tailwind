@@ -1,5 +1,5 @@
 import { ButtonBar } from "@/widgets/buttonBar"
-import { PageProps, PAGES } from "./home"
+import { PageProps } from "./home/home"
 
 export const Start = ({}: PageProps) => {
   return (

@@ -1,6 +1,7 @@
 import { Card } from "@/components/card/card"
 import { ButtonBar } from "@/widgets/buttonBar"
-import { PAGES, PageProps } from "./home"
+import { PageProps } from "./home/home"
+
 
 export const How = ({  }: PageProps) => {
   return (

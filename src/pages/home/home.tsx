@@ -2,35 +2,20 @@ import { useState } from "react"
 
 import "./home.scss"
 
-import { Start } from "./1_title_page"
-import { Why } from "./2_why"
-import { How } from "./3_how"
-import { Where } from "./5_where"
-import { DeadCode } from "./4_dead_code"
-import { Responsive } from "./10_responsive"
-import { Flex1 } from "./6_flex_1"
-import { Flex2 } from "./7_flex_2"
-import { Gird } from "./8_grid"
-import { Buttons } from "./9_buttons"
-import { End } from "./end"
+import { PAGES, usePresentationStore } from "@/store/page-store"
+import { Start } from "../01_title_page"
+import { Why } from "../02_why"
+import { How } from "../03_how"
+import { DeadCode } from "../04_dead_code"
+import { Where } from "../05_where"
+import { Flex1 } from "../06_flex_1"
+import { Flex2 } from "../07_flex_2"
+import { Gird } from "../08_grid"
+import { Buttons } from "../09_buttons"
 import { Animations } from "../11_animations"
-import { usePresentationStore } from "@/store/page-store"
+import { Responsive } from "../10_responsive"
 
-export enum PAGES {
-  START = "START",
-  WHY = "WHY",
-  HOW = "HOW",
-  DEAD_CODE = "DEAD_CODE",
-  WHERE = "WHERE",
-  FLEX = "FLEX",
-  FLEX2 = "FLEX2",
-  GRID = "GRID",
-
-  BUTTON = "BUTTON",
-  RESPONSIVE = "RESPONSIVE",
-  ANIMATION = "ANIMATION",
-  END = "END",
-}
+import { End } from "../end"
 
 export type PageProps = {
   // setPage: (page: PAGES) => void
