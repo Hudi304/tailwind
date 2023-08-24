@@ -18,6 +18,11 @@ import { Responsive } from "../10_responsive"
 import { End } from "../end"
 import { TailwindConfig } from "../03_tailwind_config"
 
+// * sdsadsad
+// ? sdsadsad
+// TODO sdsadsad
+// ! sdsadsad
+
 export type PageProps = {}
 
 export const Home = () => {

@@ -19,7 +19,7 @@ export const Flex1 = ({}: PageProps) => {
   return (
     <Card className="bg-gray-800 mt-[200px]  min-w-[600px] ">
       <h1 className="text-8xl text-white font-bold ">Cum centram un div?</h1>
-      <div className="stripes flex w-full h-96 rounded mt-6">
+      <div className="stripes flex justify-center items-center w-full h-96 rounded mt-6">
         <Square />
       </div>
     </Card>

@@ -85,6 +85,7 @@
 
 .grid-lg {
   @apply 
+  3xl:grid-cols-5
   2xl:grid-cols-4
   xl:grid-cols-3
   lg:grid-cols-2
