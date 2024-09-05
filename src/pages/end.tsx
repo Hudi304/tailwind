@@ -2,7 +2,7 @@ import { Card } from "@/components/card/card"
 import { ButtonBar } from "@/widgets/buttonBar"
 import { PageProps } from "./home/home"
 
-import gif from "../assets/end"
+import gif from "../assets/end.gif"
 
 export const End = ({}: PageProps) => {
   return (
