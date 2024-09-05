@@ -26,7 +26,9 @@ export const Buttons = ({}: PageProps) => {
           <Button variant={"danger"} disabled>
             Button Label
           </Button>
-          <Button className={` bg-yellow-400`}>Button Label</Button>
+          <Button className={` bg-yellow-400`} variant={"primary"}>
+            Button Label
+          </Button>
         </div>
       </div>
     </Card>

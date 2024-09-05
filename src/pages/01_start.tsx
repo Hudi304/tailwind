@@ -23,7 +23,7 @@ export const Start = ({}: PageProps) => {
             chance, I really think you’ll wonder how you ever worked with CSS any other way.
           </p>
 
-          <div className="flex justify-end">
+          <div className="flex justify-end m-3">
             <span className="flex items-center gap-5">
               <img className="h-20 w-20 rounded-full" src={adam_walton} />
 

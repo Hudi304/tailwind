@@ -42,14 +42,14 @@ export const TailwindConfig: FC = () => {
       <div className="flex">
         <SyntaxHighlighter children={color} language="typescript" style={dracula} />
 
-        <div className="p-3 max-w-[400px] text-lg font-semibold">
-          <p>
+        <div className="p-3 max-w-[400px] text-lg font-semibold flex flex-col gap-3 ">
+          <p className="">
             Fisierul e foarte mare, o sa gasiti in el definitii la apropae toate proprietatile de
             CSS. Color de exemplu defineste toate proprietatile legate de culoare. (text color,
             backgroundColor, borderColor, ...)
           </p>
 
-          <p>
+          <p className="">
             In general clasele de tailwind sunt folosite si cu numere dupa ele.
             <div className="flex flex-col mt-4 ">
               <span className="flex gap-2">
@@ -82,6 +82,11 @@ export const TailwindConfig: FC = () => {
                 text-fuchsia-700
               </span>
             </div>
+          </p>
+
+          <p className="">
+            Nu trebie sa tineit mintne numele la clase. Extensia de VS Code pentru tailwind va da
+            intellisense pentru toate clasele din fisierurl vostru de config.
           </p>
         </div>
       </div>
